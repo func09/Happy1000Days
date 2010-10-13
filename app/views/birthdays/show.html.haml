@@ -9,39 +9,35 @@
   });
 
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-lang="ja">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-.profile
+.profile.rounded
   %p
     %span.nickname= @birthday.nickname
     さんの誕生日は、
     %span.date=l(@birthday.birthday.to_date, :format => :long)
     です
     %br
-    %span.nickname= @birthday.nickname
-    さんの年齢は、
-    %span.age #{@birthday.current_age}歳です
-    %br
-    %span.nickname= @birthday.nickname
-    さんが生まれてから、 
-    今日で
+    生まれてから今日で
     %span.days= @birthday.current_days
-    日目です
+    日目（
+    %span.age #{@birthday.current_age}歳
+    ）です
 
 - if @birthday.happy_day_today?
   Today is Good Day!
 
-.next
-  %h3 次回のHappy Dayは
+.next.rounded
+  %span 次回のちょっと嬉しい日は
   = render :partial => 'happy_day', :locals => {:happy_day => @birthday.next_happy_day}
 
-.prev
-  %h3 前回のHappy Dayは
+.prev.rounded
+  %span 前回のちょっと嬉しい日は
   = render :partial => 'happy_day', :locals => {:happy_day => @birthday.prev_happy_day}
 
 %hr
 
 %button#view-all
   全てのHappy Dayを見る
-.all(style='display:none;')
+.all.rounded(style='display:none;')
   - for happy_day in @birthday.happy_days
     = render :partial => 'happy_day', :locals => {:happy_day => happy_day}
     

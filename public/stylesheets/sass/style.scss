@@ -1,14 +1,36 @@
+@import 'mixin.scss';
+
 body {
   font-family: serif;
   text-align: center;
+  background: #FFF;
+  color: #333;
+}
+
+#container {
+  border: none;
+  width: 800px;
+  margin: 0px auto;
+  padding: 0px;
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 66px;
+  margin: 10px;
+  a {
+    color: #333;
+  }
 }
 
 h2 {
   font-size: 25px;
+}
+
+.rounded {
+  @include border-radius(10px, 10px, 10px, 10px);
+  border: 5px solid #CCC;
+  margin: 10px;
+  padding: 15px;
 }
 
 .profile {
@@ -18,6 +40,45 @@ h2 {
     color: #CC0000;
     font-size: 32px;
   }
+}
+
+#new_birthday {
+  width: 500px;
+  margin: 0 auto;
+  padding: 30px;
+  input[type="text"] {
+    @include border-radius(4px, 4px, 4px, 4px);
+    border: 1px solid #B3B3B3;
+    padding: 10px;
+    font-size: 20px;
+    width: 200px;
+  }
+  select {
+  }
+  input[type="submit"] {
+    @include border-radius(14px, 14px, 14px, 14px);
+    background: #FF920D;
+    border: 1px solid #FF920D;
+    padding: 4px 15px 6px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+form label {
+  font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+  left: -200px;
+}
+
+fieldset{
+  text-align: left;
+  padding-left: 200px;
+  position: relative;
+  border:none;
+  margin-bottom: 10px;
 }
 
 .next, .prev {

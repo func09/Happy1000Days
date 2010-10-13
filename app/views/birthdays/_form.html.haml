@@ -5,11 +5,11 @@
         - @birthday.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  %fieldset
     = f.label :nickname, 'ニックネーム'
     = f.text_field :nickname
-  .field
+  %fieldset
     = f.label :birthday, '誕生日'
     = f.date_select :birthday, :use_month_numbers => true, :start_year => 100.years.ago.year, :end_year => 0.years.ago.year, :default => 30.years.ago.at_beginning_of_year, :date_separator => '-'
-  .actions
+  %fieldset.actions
     = f.submit 'これでいいよ'
