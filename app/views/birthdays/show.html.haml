@@ -5,7 +5,7 @@
     });
   });
 %p
-  #{@birthday.nickname}さんの誕生日は、#{@birthday.birthday.strftime("%Y年%m月%d日")}です
+  #{@birthday.nickname}さんの誕生日は、#{l(@birthday.birthday.to_date, :format => :long)}です
 %p
   #{@birthday.nickname}さんが生まれてから、 今日で#{@birthday.current_days}日目です。
 

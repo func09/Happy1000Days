@@ -1,5 +1,5 @@
-生まれて#{happy_day[:days]}日目
-#{happy_day[:date]} 
+生まれてから#{happy_day[:days]}日目
+#{l(happy_day[:date].to_date, :format => :long)} 
 - if happy_day[:date].past?
   #{happy_day[:age]}歳の時でした
 - else

@@ -1,7 +1,6 @@
 = form_for @birthday do |f|
   -if @birthday.errors.any?
     #errorExplanation
-      %h2= "#{pluralize(@birthday.errors.count, "error")} prohibited this birthday from being saved:"
       %ul
         - @birthday.errors.full_messages.each do |msg|
           %li= msg
