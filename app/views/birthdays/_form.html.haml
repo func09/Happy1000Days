@@ -6,10 +6,10 @@
           %li= msg
 
   .field
-    = f.label :nickname, 'Nickname'
+    = f.label :nickname, 'ニックネーム'
     = f.text_field :nickname
   .field
-    = f.label :birthday, 'Birthday'
+    = f.label :birthday, '誕生日'
     = f.date_select :birthday, :use_month_numbers => true, :start_year => 100.years.ago.year, :end_year => 0.years.ago.year, :default => 30.years.ago.at_beginning_of_year, :date_separator => '-'
   .actions
-    = f.submit 'Save'
+    = f.submit 'これでいいよ'

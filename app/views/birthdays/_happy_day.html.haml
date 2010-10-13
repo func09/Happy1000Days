@@ -1,6 +1,8 @@
-生まれてから#{happy_day[:days]}日目
-#{l(happy_day[:date].to_date, :format => :long)} 
-- if happy_day[:date].past?
-  #{happy_day[:age]}歳の時でした
-- else
-  #{happy_day[:age]}歳の時です
+.happy-day(class="#{happy_day[:date].past? ? 'past' : ''}")
+
+  生まれてから<span class='days'>#{happy_day[:days]}日目</span>（<span class='age'>#{happy_day[:age]}歳</span>）
+  <span class='date'>#{l(happy_day[:date].to_date, :format => :long)} </span>
+  - if happy_day[:date].past?
+    でした
+  - else
+    です

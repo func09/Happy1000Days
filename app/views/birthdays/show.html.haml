@@ -1,13 +1,26 @@
+- title "#{@birthday.nickname}さんのHAPPY 1000 DAYS!!"
+
 :javascript
   $(function(){
     $('#view-all').click(function(){
-      $('.all').show();
+      $('.all').slideDown();
+      $(this).hide();
     });
   });
-%p
-  #{@birthday.nickname}さんの誕生日は、#{l(@birthday.birthday.to_date, :format => :long)}です
-%p
-  #{@birthday.nickname}さんが生まれてから、 今日で#{@birthday.current_days}日目です。
+
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-lang="ja">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+.profile
+  %p
+    %span.nickname= @birthday.nickname
+    さんの誕生日は、
+    %span.date=l(@birthday.birthday.to_date, :format => :long)
+    です
+    %br
+    %span.nickname= @birthday.nickname
+    さんが生まれてから、 
+    今日で
+    %span.days= @birthday.current_days
+    日目です
 
 - if @birthday.happy_day_today?
   Today is Good Day!
@@ -20,10 +33,11 @@
   %h3 前回のHappy Dayは
   = render :partial => 'happy_day', :locals => {:happy_day => @birthday.prev_happy_day}
 
+%hr
+
 %button#view-all
   全てのHappy Dayを見る
 .all(style='display:none;')
   - for happy_day in @birthday.happy_days
-    .happy-day
-      = render :partial => 'happy_day', :locals => {:happy_day => happy_day}
+    = render :partial => 'happy_day', :locals => {:happy_day => happy_day}
     

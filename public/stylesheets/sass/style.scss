@@ -1,0 +1,38 @@
+body {
+  font-family: serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.profile {
+  font-size: 22px;
+  font-weight: bold;
+  .nickname, .days, .date {
+    color: #CC0000;
+    font-size: 32px;
+  }
+}
+
+.next, .prev {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.happy-day {
+  &.past {
+    color: #666;
+    .age, .days, .date {
+      color: #666;
+    }
+  }
+  .age, .days, .date {
+    color: #CC0000;
+  }
+}
