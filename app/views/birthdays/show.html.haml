@@ -1,22 +1,29 @@
+:javascript
+  $(function(){
+    $('#view-all').click(function(){
+      $('.all').show();
+    });
+  });
 %p
-  %b Nickname:
-  = @birthday.nickname
+  #{@birthday.nickname}さんの誕生日は、#{@birthday.birthday.strftime("%Y年%m月%d日")}です
 %p
-  %b Birthday:
-  = @birthday.birthday
+  #{@birthday.nickname}さんが生まれてから、 今日で#{@birthday.current_days}日目です。
 
-- if @birthday.good_day_today?
+- if @birthday.happy_day_today?
   Today is Good Day!
 
-%p
-  %h3 Next Happy Day
-  aaaaa
+.next
+  %h3 次回のHappy Dayは
+  = render :partial => 'happy_day', :locals => {:happy_day => @birthday.next_happy_day}
 
-%ul
-- for good_day in @birthday.good_days
-  %li
-    %h4.days
-      #{good_day[:num]} Days
-    .date
-      #{good_day[:date].strftime("%Y/%m/%d")} (Age #{good_day[:age]} years)
+.prev
+  %h3 前回のHappy Dayは
+  = render :partial => 'happy_day', :locals => {:happy_day => @birthday.prev_happy_day}
+
+%button#view-all
+  全てのHappy Dayを見る
+.all(style='display:none;')
+  - for happy_day in @birthday.happy_days
+    .happy-day
+      = render :partial => 'happy_day', :locals => {:happy_day => happy_day}
     

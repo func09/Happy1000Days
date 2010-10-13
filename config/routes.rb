@@ -1,7 +1,7 @@
 Borndays::Application.routes.draw do
 
   root :to => 'birthdays#new'
-  match ':uuid' => 'birthdays#show', :constraints => {:uuid => /[0-9a-zA-Z]{6}/}
+  match ':uuid' => 'birthdays#show', :constraints => {:uuid => /[0-9a-zA-Z]{6}/}, :as => 'uuid'
   resources :birthdays, :only => [:show, :new, :create]
 
   # The priority is based upon order of creation:

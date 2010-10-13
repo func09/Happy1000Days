@@ -25,16 +25,18 @@ class BirthdaysController < ApplicationController
   # POST /birthdays.xml
   def create
     @birthday = Birthday.new(params[:birthday])
-
-    respond_to do |format|
-      if @birthday.save
-        format.html { redirect_to(@birthday, :notice => 'Birthday was successfully created.') }
-        format.xml  { render :xml => @birthday, :status => :created, :location => @birthday }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @birthday.errors, :status => :unprocessable_entity }
+    if @same = @birthday.find_same
+      redirect_to( uuid_path(@same.uuid))
+    else
+      respond_to do |format|
+        if @birthday.save
+          format.html { redirect_to( uuid_path(@birthday.uuid), :notice => 'Birthday was successfully created.') }
+        else
+          format.html { render :action => "new" }
+        end
       end
     end
+    
   end
 
 end
