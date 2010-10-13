@@ -6,12 +6,12 @@ h1 {
   font-size: 60px; }
 
 h2 {
-  font-size: 30px; }
+  font-size: 25px; }
 
 .profile {
   font-size: 22px;
   font-weight: bold; }
-  .profile .nickname, .profile .days, .profile .date {
+  .profile .nickname, .profile .days, .profile .date, .profile .age {
     color: #CC0000;
     font-size: 32px; }
 

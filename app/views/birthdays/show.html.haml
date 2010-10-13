@@ -17,6 +17,10 @@
     です
     %br
     %span.nickname= @birthday.nickname
+    さんの年齢は、
+    %span.age #{@birthday.current_age}歳です
+    %br
+    %span.nickname= @birthday.nickname
     さんが生まれてから、 
     今日で
     %span.days= @birthday.current_days

@@ -36,6 +36,10 @@ class Birthday < ActiveRecord::Base
   def current_days
     @current_days ||= ((self.birthday.to_date)..(Date.today)).count
   end
+  
+  def current_age
+    current_days / 365
+  end
 
   # 今日はHappyDayかチェックする
   def happy_day_today?
