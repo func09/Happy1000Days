@@ -1,0 +1,32 @@
+!!!
+%html
+  
+  %head
+    %title
+      = yield(:title) || "Happy 1000 Days!!"
+    %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
+    = stylesheet_link_tag "application"
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold&subset=latin'
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+    = yield(:head)
+    :css
+      body {
+        font-family: 'Yanone Kaffeesatz', arial, serif;
+        font-size: 100%;
+      }
+  
+  %body
+    
+    #container
+      
+      %header
+        %h1= link_to 'HAPPY 1,000 DAYS!!', root_path
+      
+      - flash.each do |name, msg|
+        = content_tag :div, msg, :id => "flash_#{name}"
+      
+      - if show_title?
+        %h1= yield(:title)
+      
+      = yield

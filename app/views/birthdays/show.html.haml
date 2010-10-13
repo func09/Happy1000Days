@@ -1,0 +1,22 @@
+%p
+  %b Nickname:
+  = @birthday.nickname
+%p
+  %b Birthday:
+  = @birthday.birthday
+
+- if @birthday.good_day_today?
+  Today is Good Day!
+
+%p
+  %h3 Next Happy Day
+  aaaaa
+
+%ul
+- for good_day in @birthday.good_days
+  %li
+    %h4.days
+      #{good_day[:num]} Days
+    .date
+      #{good_day[:date].strftime("%Y/%m/%d")} (Age #{good_day[:age]} years)
+    

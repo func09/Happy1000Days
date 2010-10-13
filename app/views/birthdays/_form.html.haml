@@ -1,0 +1,16 @@
+= form_for @birthday do |f|
+  -if @birthday.errors.any?
+    #errorExplanation
+      %h2= "#{pluralize(@birthday.errors.count, "error")} prohibited this birthday from being saved:"
+      %ul
+        - @birthday.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :nickname, 'Nickname'
+    = f.text_field :nickname
+  .field
+    = f.label :birthday, 'Birthday'
+    = f.date_select :birthday, :use_month_numbers => true, :start_year => 100.years.ago.year, :end_year => 0.years.ago.year, :default => 30.years.ago.at_beginning_of_year, :date_separator => '-'
+  .actions
+    = f.submit 'Save'
