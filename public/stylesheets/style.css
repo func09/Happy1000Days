@@ -88,13 +88,14 @@ form label {
   font-weight: bold;
   font-size: 20px;
   position: absolute;
-  left: -200px; }
+  left: -180px;
+  display: block; }
 
 fieldset {
   text-align: left;
-  padding-left: 200px;
   position: relative;
   border: none;
+  margin-left: 180px;
   margin-bottom: 10px; }
 
 .next, .prev {
