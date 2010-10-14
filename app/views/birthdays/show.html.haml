@@ -30,7 +30,7 @@
     今日は#{@birthday.nickname}さんの#{@birthday.current_age}歳の誕生日です！おめでとう！
 
 .future.rounded
-  .title これから来るのちょっと嬉しい日
+  .title これから来るちょっと嬉しい日
   .content
     - for happy_day in @birthday.future_happy_days[0..5]
       = render :partial => 'happy_day', :locals => {:happy_day => happy_day}

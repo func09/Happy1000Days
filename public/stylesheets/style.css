@@ -21,6 +21,7 @@ h2 {
   font-size: 25px; }
 
 .rounded {
+  background: #FFF;
   -webkit-border-top-left-radius: 10px;
   -webkit-border-top-right-radius: 10px;
   -webkit-border-bottom-right-radius: 10px;
@@ -42,7 +43,7 @@ h2 {
     padding: 10px;
     font-size: 20px;
     font-weight: bold;
-    text-shadow: white -1px -1px 1px; }
+    text-shadow: #DDD 1px 1px 1px; }
 
 .profile {
   font-size: 22px;
