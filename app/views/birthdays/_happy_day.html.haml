@@ -7,5 +7,5 @@
   - else
     です
   %span.calender
-    <a href="http://www.google.com/calendar/event?action=TEMPLATE&text=#{@birthday.nickname}さんが生まれてから#{happy_day[:days]}日目&dates=#{happy_day[:date].strftime('%Y%m%d')}/#{1.day.since(happy_day[:date]).strftime("%Y%m%d")}&details=#{@birthday.nickname}さんが生まれてから#{happy_day[:days]}日目です&location=&trp=false&sprop=#{uuid_path(@birthday.uuid)}&sprop=name:HAPPY%201000%20DAYS" target="_blank">Googleカレンダーに追加</a>
+    <a href="http://www.google.com/calendar/event?action=TEMPLATE&text=#{@birthday.nickname}さんが生まれてから#{happy_day[:days]}日目&dates=#{happy_day[:date].strftime('%Y%m%d')}/#{1.day.since(happy_day[:date]).strftime("%Y%m%d")}&details=#{uuid_url(@birthday.uuid)}&location=&trp=false&sprop=#{uuid_url(@birthday.uuid)}&sprop=name:HAPPY%201000%20DAYS" target="_blank">Googleカレンダーに追加</a>
     
