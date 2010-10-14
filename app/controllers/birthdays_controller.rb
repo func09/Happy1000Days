@@ -2,7 +2,7 @@ class BirthdaysController < ApplicationController
   # GET /birthdays/1
   # GET /birthdays/1.xml
   def show
-    response.headers['Cache-Control'] = 'public, max-age=300'
+    # response.headers['Cache-Control'] = 'public, max-age=300'
     @birthday = Birthday.find_by_uuid(params[:uuid])
 
     respond_to do |format|
