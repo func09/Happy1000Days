@@ -40,7 +40,11 @@ class Birthday < ActiveRecord::Base
   def current_age
     current_days / 365
   end
-
+  
+  def birthday?
+    self.birthday.to_date == Date.today
+  end
+  
   # 今日はHappyDayかチェックする
   def happy_day_today?
     @is_happy_day_today ||= GOOD_DAYS.include?(self.current_days)

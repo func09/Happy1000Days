@@ -3,15 +3,16 @@
 body {
   font-family: serif;
   text-align: center;
-  background: #FFF;
+  background: #F5F6F0;
   color: #333;
 }
 
 #container {
   border: none;
-  width: 800px;
+  width: 640px;
   margin: 0px auto;
   padding: 0px;
+  background: transparent;
 }
 
 h1 {
@@ -28,9 +29,17 @@ h2 {
 
 .rounded {
   @include border-radius(10px, 10px, 10px, 10px);
-  border: 5px solid #CCC;
-  margin: 10px;
+  border: 6px solid #CCC;
+  margin-bottom: 10px;
   padding: 15px;
+  .title {
+    background: #CCC;
+    margin: -15px -15px 10px -15px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: #FFF -1px -1px 1px;
+  }
 }
 
 .profile {
