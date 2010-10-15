@@ -8,7 +8,6 @@
     });
   });
 
-<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-lang="ja">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 .profile.rounded
   .title
     #{@birthday.nickname}さんの誕生日
@@ -24,6 +23,9 @@
       日目（
       %span.age #{@birthday.current_age}歳
       ）
+  .shares
+    <a href="http://twitter.com/share" class="twitter-share-button" data-text="#{@birthday.nickname}さんのHAPPY1000DAYS!! #happy1000days" data-count="vertical" data-lang="ja">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <iframe src="http://www.facebook.com/plugins/like.php?href=#{uuid_url(@birthday.uuid)}&amp;layout=box_count&amp;show_faces=true&amp;width=100&amp;action=like&amp;colorscheme=light&amp;height=65" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:65px;" allowTransparency="true"></iframe>
 
 - if @birthday.birthday?
   .todayisbirthday
