@@ -1,4 +1,4 @@
-.happy-day(class="#{happy_day[:date].past? ? 'past' : ''}")
+%li.happy-day(class="#{happy_day[:date].past? ? 'past' : ''}")
 
   <span class='date'>#{l(happy_day[:date].to_date, :format => :long)} </span>、
   生まれてから<span class='days'>#{happy_day[:days]}日目</span>（<span class='age'>#{happy_day[:age]}歳</span>）

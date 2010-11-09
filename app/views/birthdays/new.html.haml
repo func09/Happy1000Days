@@ -1,10 +1,14 @@
 - title 'HAPPY 1000 DAYS!!'
 
-%p= link_to 'サンプルを見る', 'http://happy1000days.heroku.com/IypbGo'
-
-.form.rounded
-
-  .title あなたのニックネームと誕生日を教えて（友達のでもいいよ）
-  .content
-    = render 'form'
+.content
+  .top
+    %p.description
+      ちょっとうれしい、<br />生まれてからの<br />日数がわかるサービス
+      %span= link_to 'サンプルを見る', 'http://happy1000days.heroku.com/IypbGo'
+    .form.rounded
+      %h2.title
+        あなたのニックネームと誕生日を教えて
+        %span
+          友達のでもいいよ
+      = render 'form'
 

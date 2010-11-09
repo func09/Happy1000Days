@@ -8,8 +8,8 @@
   %fieldset
     = f.label :nickname, 'ニックネーム'
     = f.text_field :nickname
-  %fieldset
+  %fieldset.birth_day
     = f.label :birthday, '誕生日'
-    = f.date_select :birthday, :use_month_numbers => true, :start_year => 100.years.ago.year, :end_year => 0.years.ago.year, :default => 30.years.ago.at_beginning_of_year, :date_separator => '-'
+    = f.date_select :birthday, :use_month_numbers => true, :start_year => 100.years.ago.year, :end_year => 0.years.ago.year, :default => 30.years.ago.at_beginning_of_year, :date_separator => '<span>-</span>'
   %fieldset.actions
     = f.submit 'これでいいよ'
