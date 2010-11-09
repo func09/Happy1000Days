@@ -42,7 +42,7 @@ class Birthday < ActiveRecord::Base
   end
   
   def birthday?
-    self.birthday.to_date == Date.today
+    self.birthday.strftime('%m%d') == Date.today.strftime('%m%d')
   end
   
   # 今日はHappyDayかチェックする
