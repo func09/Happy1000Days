@@ -1,3 +1,35 @@
+/* hide container until all is ready */
+.message {
+	position: absolute;
+	top: -150px;
+	width:927px;
+	margin-right: -45px;
+	margin-left: -35px;
+	list-style-type: none;
+	padding:0;
+	background-image: url(../images/message.png);
+	background-position: left top;
+	opacity:0;
+	height: 112px;
+}
+
+.message h2{
+	margin: 0px;
+	text-align: center;
+	display: block;
+	font-size: 20px;
+	line-height: 77px;
+	padding-top: 25px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	color: #edf7fe;
+	text-shadow:#000 0px 0px 5px;
+}
+.message h2 span{
+	letter-spacing: 1px;
+}
+
 .clearfix:after,
 div:after,
 ul:after,
@@ -363,12 +395,20 @@ fieldset.actions {
 	font-weight: bold;
 }
 
-#footer {
+#footer ul {
 	text-align: right;
+	display: block;
+}
+#footer li {
+	text-align: right;
+	display: inline;
+	margin-bottom: 8px;
+	list-style-type: none;
+	margin-left: 1.2em;
 }
 #footer a:link,
 #footer a:visited {
-	color: #492e06;
+	color: #2a1901;
 	text-decoration: none;
 }
 #footer a:hover,
