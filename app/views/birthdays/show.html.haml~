@@ -54,7 +54,7 @@
 - if @birthday.birthday?
   .todayisbirthday
     .message
-      %h2 おめでとう！今日は <span>#{@birthday.nickname}</span>さんの#{@birthday.current_age}歳の誕生日です！
+      %h2 おめでとう！今日は#{@birthday.nickname}さんの#{@birthday.current_age}歳の誕生日です！
 
 .future.happy_days
   %h2.title これから来るちょっと嬉しい日
